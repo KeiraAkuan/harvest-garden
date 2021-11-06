@@ -1,0 +1,12 @@
+{
+    "image1": {
+        "data": "hwQUABQAAAAAAADA/P8PAAAAAAAAAAB8d7v/AAAAAAAAu8t3x8z7/wAAAACwG3F3zMz72wAAAAB7F3F3y8z83QAAAAB7d3e33d273QAAAAB7d3e33d3NuwAAAAB7d3fbzd3NDAAAAACwd3fb3dzdDAAAAACwcXfb3d3d/wAAAACwEcfb3b3d/wAAAACwG8fczL3duwAAAAAAe8fM3b39uwAAAAAAfLfMvN38vwAAAAAAzLu7zP8A/wAAAAAAwPz/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Toad"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
