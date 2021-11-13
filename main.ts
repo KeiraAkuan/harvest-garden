@@ -165,9 +165,23 @@ info.player1.setScore(0)
 info.player2.setScore(0)
 let FreeFieldTiles = tiles.getTilesByType(assets.tile`tile1`)
 game.onUpdateInterval(500, function () {
+    if (FreeFieldTiles.length > 0) {
+
     Sprout2 = sprites.create(sproutImg, SpriteKind.Sprout)
     
     let groundIndex = randint(0, FreeFieldTiles.length - 1)
     let groundTile = FreeFieldTiles[groundIndex]
     tiles.placeOnTile(Sprout2, groundTile)
-    })
+
+    FreeFieldTiles.removeAt(groundIndex)
+    rabbitChaseSprout()
+    }
+})
+let targetSprout = null
+function rabbitChaseSprout() {
+    let sprout = sprites.allOfKind(SpriteKind.Sprout)
+    let sproutIndex = randint(0, sprout.length - 1)
+  targetSprout = sprout[sproutIndex]
+
+  rabbit.follow(targetSprout, 50)
+}
