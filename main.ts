@@ -2,6 +2,16 @@ namespace SpriteKind {
     export const Veggie = SpriteKind.create()
     export const Sprout = SpriteKind.create()
 }
+sprites.onOverlap(SpriteKind.Enemy,SpriteKind.Sprout, function(enemy, theSprout){
+    info.player2.changeScoreBy(1)
+
+theSprout.setKind(SpriteKind.Veggie)
+    let veggieIndex = randint(0,veggies.length - 1)
+    theSprout.setImage(veggies[veggieIndex])
+    theSprout.say("")
+rabbitChaseSprout()
+})
+
 let Sprout2: Sprite = null
 let veggies = [
 img`
@@ -177,11 +187,15 @@ game.onUpdateInterval(500, function () {
     rabbitChaseSprout()
     }
 })
-let targetSprout = null
+let targetSprout: any = null
 function rabbitChaseSprout() {
+    if (targetSprout == null || targetSprout.kind() == SpriteKind.Veggie) {
     let sprout = sprites.allOfKind(SpriteKind.Sprout)
     let sproutIndex = randint(0, sprout.length - 1)
   targetSprout = sprout[sproutIndex]
 
   rabbit.follow(targetSprout, 50)
+  targetSprout.say("Help Me!!!")
+    }
 }
+rabbit.z = 10
